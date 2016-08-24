@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="400.0" prefWidth="800.0"
+      styleClass="mainFxmlClass"
+      fx:controller="com.mc.gui.SampleController"
+      spacing="10" >
+    <stylesheets>
+        <URL value="@sample.css"/>
+    </stylesheets>
+    <padding>
+        <Insets top="10" bottom="10" left="10" right="10" />
+    </padding>
+    <HBox spacing="5">
+        <Button text="Open" onAction="#clickOpen">
+            <HBox.margin>
+                <Insets right="10" />
+            </HBox.margin>
+        </Button>
+        <Button text="Stop" onAction="#clickStop" />
+        <Button text="Play" onAction="#clickPlay" />
+        <Button text="Pause"/>
+        <Button text="Prev"/>
+        <Button text="Next" onAction="#clickNext" />
+    </HBox>
+    <HBox spacing="20">
+        <VBox spacing="5" >
+            <GridPane>
+                <Label text="Username" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <GridPane.margin>
+                        <Insets right="10" bottom="5" />
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="inputUsername" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="5" />
+                    </GridPane.margin>
+                </TextField>
+                <Label text="Password" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                    <GridPane.margin>
+                        <Insets right="10" />
+                    </GridPane.margin>
+                </Label>
+                <PasswordField fx:id="inputPassword" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            </GridPane>
+            <HBox spacing="5" >
+                <Button fx:id="buttonSignInOut" text="Sign in" onAction="#clickSignInOut"/>
+            </HBox>
+        </VBox>
+        <ListView fx:id="listPlaylist" onMouseClicked="#pickedSong" prefWidth="500" />
+    </HBox>
+</VBox>
