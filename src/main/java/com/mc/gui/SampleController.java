@@ -86,7 +86,7 @@ public class SampleController implements Initializable {
                             toList())
                     );
             listPlaylist.getItems().addAll(observableList);
-            MusicService.getInstance().setSongs(observableList);
+            MusicService.getInstance().setSongs(listPlaylist.getItems());
         }
     }
 
